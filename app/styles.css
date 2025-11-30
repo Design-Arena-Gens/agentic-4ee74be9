@@ -1,0 +1,822 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Georgia', serif;
+  background: #000;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+.story-container {
+  position: relative;
+  width: 100%;
+  height: 600vh;
+}
+
+.scene {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.scene-content {
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+  padding: 40px;
+  text-align: center;
+  z-index: 10;
+}
+
+.scene-title {
+  font-size: 4rem;
+  font-weight: 300;
+  letter-spacing: 4px;
+  margin-bottom: 30px;
+  text-shadow: 0 4px 20px rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+
+.scene-text {
+  font-size: 1.5rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* Scene 1 - Night City */
+.scene-1 {
+  background: linear-gradient(to bottom, #0a0a1a 0%, #1a1a3a 100%);
+}
+
+.city-night {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 400px;
+}
+
+.buildings {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.building {
+  position: absolute;
+  bottom: 0;
+  width: 80px;
+  background: linear-gradient(to bottom, #1a1a2e 0%, #0f0f1e 100%);
+  border-top: 2px solid rgba(100, 100, 150, 0.3);
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.building::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  right: 10%;
+  bottom: 10%;
+  background:
+    linear-gradient(90deg, transparent 0%, transparent 45%, rgba(255, 200, 100, 0.3) 45%, rgba(255, 200, 100, 0.3) 55%, transparent 55%),
+    linear-gradient(0deg, transparent 0%, transparent 45%, rgba(255, 200, 100, 0.2) 45%, rgba(255, 200, 100, 0.2) 55%, transparent 55%);
+  background-size: 20px 30px;
+}
+
+.man-walking {
+  position: absolute;
+  bottom: 80px;
+  width: 60px;
+  height: 100px;
+}
+
+.man-silhouette {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.man-head {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 30px;
+  background: #2a2a3a;
+  border-radius: 50%;
+}
+
+.man-body {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 25px;
+  height: 40px;
+  background: #2a2a3a;
+  border-radius: 5px;
+}
+
+.man-leg-left,
+.man-leg-right {
+  position: absolute;
+  top: 70px;
+  width: 12px;
+  height: 30px;
+  background: #2a2a3a;
+  border-radius: 3px;
+}
+
+.man-leg-left {
+  left: 35%;
+}
+
+.man-leg-right {
+  left: 55%;
+}
+
+/* Scene 2 - Streetlight Discovery */
+.scene-2 {
+  background: linear-gradient(to bottom, #0a0a1a 0%, #1a1a2e 50%, #0f0f1e 100%);
+}
+
+.streetlight-scene {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  margin-bottom: 100px;
+}
+
+.streetlight {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 300px;
+}
+
+.light-pole {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #444 0%, #222 100%);
+  border-radius: 5px;
+}
+
+.light-head {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 40px;
+  background: #666;
+  border-radius: 50% 50% 0 0;
+}
+
+.light-glow {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255, 220, 150, 0.4) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.dog-hiding {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.dog-small {
+  position: relative;
+  width: 60px;
+  height: 50px;
+}
+
+.dog-head {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  width: 30px;
+  height: 25px;
+  background: #8B7355;
+  border-radius: 50% 50% 40% 40%;
+}
+
+.dog-ear-left,
+.dog-ear-right {
+  position: absolute;
+  top: -5px;
+  width: 12px;
+  height: 15px;
+  background: #6B5345;
+  border-radius: 50%;
+}
+
+.dog-ear-left {
+  left: 2px;
+  transform: rotate(-20deg);
+}
+
+.dog-ear-right {
+  right: 2px;
+  transform: rotate(20deg);
+}
+
+.dog-eye-left,
+.dog-eye-right {
+  position: absolute;
+  top: 10px;
+  width: 5px;
+  height: 5px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+}
+
+.dog-eye-left {
+  left: 6px;
+}
+
+.dog-eye-right {
+  right: 6px;
+}
+
+.dog-body-small {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 50px;
+  height: 30px;
+  background: #8B7355;
+  border-radius: 40%;
+}
+
+.injury-mark {
+  position: absolute;
+  top: 22px;
+  right: 5px;
+  width: 8px;
+  height: 8px;
+  background: rgba(200, 50, 50, 0.6);
+  border-radius: 50%;
+}
+
+.man-discovers {
+  position: absolute;
+  bottom: 50px;
+  left: 30%;
+  width: 80px;
+  height: 120px;
+}
+
+/* Scene 3 - Gentle Pickup */
+.scene-3 {
+  background: linear-gradient(to bottom, #1a1a2e 0%, #2a2a3e 100%);
+}
+
+.pickup-moment {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  margin-bottom: 100px;
+}
+
+.hands-gentle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 150px;
+}
+
+.hand-left,
+.hand-right {
+  position: absolute;
+  bottom: 0;
+  width: 80px;
+  height: 100px;
+}
+
+.hand-left {
+  left: 0;
+  transform: rotate(-15deg);
+}
+
+.hand-right {
+  right: 0;
+  transform: rotate(15deg);
+}
+
+.palm {
+  position: absolute;
+  bottom: 0;
+  width: 60px;
+  height: 70px;
+  background: linear-gradient(135deg, #d4a574 0%, #c4956a 100%);
+  border-radius: 40% 40% 20% 20%;
+}
+
+.finger {
+  position: absolute;
+  top: -20px;
+  width: 15px;
+  height: 50px;
+  background: linear-gradient(180deg, #d4a574 0%, #c4956a 100%);
+  border-radius: 50% 50% 30% 30%;
+}
+
+.hand-left .finger:nth-child(2) {
+  left: 10px;
+  transform: rotate(-10deg);
+}
+
+.hand-left .finger:nth-child(3) {
+  left: 25px;
+  transform: rotate(5deg);
+}
+
+.hand-left .finger:nth-child(4) {
+  left: 40px;
+  transform: rotate(15deg);
+}
+
+.hand-right .finger:nth-child(2) {
+  right: 10px;
+  transform: rotate(10deg);
+}
+
+.hand-right .finger:nth-child(3) {
+  right: 25px;
+  transform: rotate(-5deg);
+}
+
+.dog-in-hands {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.heart-particles {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+  z-index: 5;
+}
+
+/* Scene 4 - Home Warmth */
+.scene-4 {
+  background: linear-gradient(to bottom, #2a2420 0%, #3a3430 100%);
+}
+
+.home-scene {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  margin-bottom: 100px;
+}
+
+.room {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.window {
+  position: absolute;
+  top: 50px;
+  right: 100px;
+  width: 150px;
+  height: 200px;
+  background: rgba(100, 120, 150, 0.2);
+  border: 3px solid #555;
+  border-radius: 5px;
+}
+
+.window-pane {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #555;
+}
+
+.window-pane::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  width: 2px;
+  height: 200px;
+  background: #555;
+}
+
+.rain-outside {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, transparent 0%, rgba(150, 180, 200, 0.3) 100%);
+}
+
+.lamp {
+  position: absolute;
+  top: 100px;
+  left: 150px;
+  width: 60px;
+  height: 100px;
+}
+
+.lamp-shade {
+  width: 60px;
+  height: 40px;
+  background: linear-gradient(to bottom, #d4a55a 0%, #c49550 100%);
+  border-radius: 5px 5px 50% 50%;
+}
+
+.lamp-glow {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255, 220, 150, 0.3) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.food-bowl {
+  position: absolute;
+  bottom: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bowl {
+  width: 80px;
+  height: 30px;
+  background: linear-gradient(to bottom, #888 0%, #666 100%);
+  border-radius: 50% 50% 60% 60%;
+  border: 2px solid #555;
+}
+
+.food {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 20px;
+  background: #8B6F47;
+  border-radius: 50%;
+}
+
+.dog-eating {
+  position: absolute;
+  bottom: 140px;
+  left: 50%;
+  transform: translateX(-20px);
+}
+
+.dog-tail {
+  position: absolute;
+  bottom: 5px;
+  right: -15px;
+  width: 20px;
+  height: 8px;
+  background: #8B7355;
+  border-radius: 50%;
+  transform-origin: left center;
+}
+
+.man-watching {
+  position: absolute;
+  bottom: 120px;
+  right: 200px;
+  width: 80px;
+  height: 120px;
+}
+
+.smile {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  border-top: none;
+  border-radius: 0 0 50% 50%;
+}
+
+/* Scene 5 - Healing Montage */
+.scene-5 {
+  background: linear-gradient(to bottom, #3a4a3a 0%, #4a5a4a 100%);
+}
+
+.healing-montage {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  margin-bottom: 100px;
+}
+
+.playing-scene {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  margin-bottom: 50px;
+}
+
+.ball {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle at 30% 30%, #ff6b6b 0%, #c92a2a 100%);
+  border-radius: 50%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.dog-playing {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.dog-healthy {
+  position: relative;
+  width: 80px;
+  height: 70px;
+}
+
+.dog-healthy .dog-head {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: 40px;
+  height: 35px;
+  background: #8B7355;
+  border-radius: 50% 50% 40% 40%;
+}
+
+.dog-body-healthy {
+  position: absolute;
+  top: 25px;
+  left: 0;
+  width: 70px;
+  height: 45px;
+  background: #8B7355;
+  border-radius: 50%;
+}
+
+.walking-together {
+  position: relative;
+  width: 400px;
+  height: 150px;
+  margin: 50px auto;
+  display: flex;
+  align-items: flex-end;
+  gap: 30px;
+  padding-left: 100px;
+}
+
+.leash {
+  position: absolute;
+  top: 40px;
+  left: 150px;
+  width: 80px;
+  height: 2px;
+  background: #8B7355;
+  transform: rotate(-10deg);
+}
+
+.hearts-floating {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.heart-float {
+  position: absolute;
+  font-size: 30px;
+}
+
+/* Scene 6 - Forever */
+.scene-6 {
+  background: linear-gradient(to bottom, #ff9a56 0%, #ff6b9d 50%, #c94b7d 100%);
+}
+
+.final-scene {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  margin-bottom: 100px;
+}
+
+.sunset {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  height: 400px;
+}
+
+.sun {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  background: radial-gradient(circle, #ffeb3b 0%, #ff9800 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 100px rgba(255, 152, 0, 0.6);
+}
+
+.silhouette-duo {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: flex-end;
+  gap: 40px;
+}
+
+.silhouette-duo .man-silhouette,
+.silhouette-duo .dog-healthy {
+  filter: brightness(0);
+}
+
+.final-hearts {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.final-title {
+  font-size: 5rem;
+  background: linear-gradient(45deg, #fff 0%, #ffe0f0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.final-text {
+  font-size: 1.8rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 2;
+}
+
+.credits {
+  margin-top: 80px;
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 2;
+}
+
+/* Rain Effect */
+.rain-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0.5;
+}
+
+.raindrop {
+  position: absolute;
+  top: -10px;
+  width: 2px;
+  height: 20px;
+  background: linear-gradient(to bottom, transparent 0%, rgba(150, 180, 200, 0.6) 100%);
+  border-radius: 50%;
+}
+
+/* Audio Control */
+.audio-control {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.audio-control:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Scene Indicator */
+.scene-indicator {
+  position: fixed;
+  left: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 1000;
+}
+
+.indicator-dot {
+  position: relative;
+  width: 12px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicator-dot.active {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 1);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+.indicator-label {
+  position: absolute;
+  left: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.indicator-dot:hover .indicator-label,
+.indicator-dot.active .indicator-label {
+  opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .scene-title {
+    font-size: 2.5rem;
+  }
+
+  .scene-text {
+    font-size: 1.2rem;
+    padding: 0 20px;
+  }
+
+  .final-title {
+    font-size: 3rem;
+  }
+
+  .scene-indicator {
+    left: 15px;
+  }
+
+  .audio-control {
+    top: 15px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+}
